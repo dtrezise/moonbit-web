@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#07090d" />
+    <title>Moonbit</title>
+    <link rel="preload" href="./assets/textures/moonDetail.jpg" as="image" />
+    <link rel="preload" href="./assets/sprites/buggyFrame.png" as="image" />
+    <link rel="stylesheet" href="./src/styles.css" />
+  </head>
+  <body>
+    <canvas id="game" aria-label="Moonbit game canvas"></canvas>
+
+    <div class="hud" aria-label="Moonbit controls and readouts">
+      <div class="brand">Moonbit</div>
+      <div class="meters">
+        <span id="distance">0000 m</span>
+        <span id="velocity">0.0 m/s</span>
+      </div>
+      <div class="buttons">
+        <button id="zoomOut" type="button" aria-label="Zoom out" title="Zoom out">−</button>
+        <button id="zoomIn" type="button" aria-label="Zoom in" title="Zoom in">+</button>
+        <button id="rescue" type="button" aria-label="Rescue rover" title="Rescue">↻</button>
+      </div>
+    </div>
+
+    <div class="touch-zone touch-left" aria-hidden="true"></div>
+    <div class="touch-zone touch-right" aria-hidden="true"></div>
+
+    <script src="https://cdn.jsdelivr.net/npm/matter-js@0.20.0/build/matter.min.js"></script>
+    <script src="./src/main.js"></script>
+  </body>
+</html>

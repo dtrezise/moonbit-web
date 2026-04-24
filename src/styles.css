@@ -1,0 +1,165 @@
+:root {
+  color-scheme: dark;
+  --ink: #f4f1e7;
+  --muted: #9ba3af;
+  --line: rgba(255, 255, 255, 0.18);
+  --panel: rgba(7, 9, 13, 0.62);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #07090d;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--ink);
+  touch-action: none;
+  user-select: none;
+}
+
+#game {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background: #07090d;
+}
+
+.hud {
+  position: fixed;
+  top: max(14px, env(safe-area-inset-top));
+  left: max(14px, env(safe-area-inset-left));
+  right: max(14px, env(safe-area-inset-right));
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr auto auto;
+  align-items: center;
+  gap: 12px;
+  pointer-events: none;
+}
+
+.brand {
+  width: max-content;
+  max-width: 42vw;
+  padding: 7px 10px 8px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 7px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.meters {
+  display: flex;
+  gap: 8px;
+  color: var(--muted);
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+}
+
+.meters span {
+  min-width: 82px;
+  padding: 7px 9px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  border-radius: 7px;
+  text-align: center;
+}
+
+.buttons {
+  display: flex;
+  gap: 8px;
+  pointer-events: auto;
+}
+
+button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--line);
+  border-radius: 7px;
+  background: rgba(12, 15, 20, 0.72);
+  color: var(--ink);
+  font-size: 24px;
+  line-height: 1;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition:
+    border-color 120ms ease,
+    background-color 120ms ease,
+    transform 120ms ease;
+}
+
+button:hover {
+  border-color: rgba(255, 255, 255, 0.38);
+  background: rgba(26, 31, 39, 0.78);
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+.touch-zone {
+  position: fixed;
+  bottom: 0;
+  height: 34vh;
+  z-index: 1;
+}
+
+.touch-left {
+  left: 0;
+  width: 38vw;
+}
+
+.touch-right {
+  right: 0;
+  width: 62vw;
+}
+
+@media (max-width: 720px) {
+  .hud {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 8px;
+  }
+
+  .brand {
+    max-width: 36vw;
+    font-size: 13px;
+  }
+
+  .meters {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    justify-self: start;
+    font-size: 12px;
+  }
+
+  .meters span {
+    min-width: 74px;
+  }
+
+  button {
+    width: 34px;
+    height: 34px;
+    font-size: 21px;
+  }
+
+  .buttons {
+    gap: 6px;
+    justify-self: end;
+    position: fixed;
+    top: 14px;
+    right: auto;
+    left: calc(100% - 128px);
+    width: 114px;
+  }
+}
