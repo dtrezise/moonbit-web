@@ -157,9 +157,9 @@ button:active {
     gap: 6px;
     justify-self: end;
     position: fixed;
-    top: 14px;
+    top: 102px;
     right: auto;
-    left: calc(100% - 128px);
+    left: 14px;
     width: 114px;
   }
 }
