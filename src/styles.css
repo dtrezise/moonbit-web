@@ -46,6 +46,12 @@ body {
   pointer-events: none;
 }
 
+.brand-stack {
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+}
+
 .brand {
   width: max-content;
   max-width: 42vw;
@@ -56,6 +62,37 @@ body {
   font-weight: 700;
   letter-spacing: 0;
   text-transform: uppercase;
+}
+
+.control-hint {
+  display: grid;
+  gap: 4px;
+  width: max-content;
+  max-width: min(410px, 44vw);
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  background: rgba(7, 9, 13, 0.54);
+  border-radius: 7px;
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.35;
+}
+
+kbd {
+  display: inline-block;
+  min-width: 18px;
+  margin: 0 2px;
+  padding: 1px 5px 2px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-bottom-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--ink);
+  font-family: inherit;
+  font-size: 11px;
+  font-weight: 650;
+  line-height: 1.2;
+  text-align: center;
 }
 
 .meters {
@@ -134,6 +171,11 @@ button:active {
   .brand {
     max-width: 36vw;
     font-size: 13px;
+  }
+
+  .control-hint {
+    max-width: min(260px, calc(100vw - 28px));
+    font-size: 11px;
   }
 
   .meters {

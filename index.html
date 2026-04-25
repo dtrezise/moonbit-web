@@ -13,7 +13,14 @@
     <canvas id="game" aria-label="Moonbit game canvas"></canvas>
 
     <div class="hud" aria-label="Moonbit controls and readouts">
-      <div class="brand">Moonbit</div>
+      <div class="brand-stack">
+        <div class="brand">Moonbit</div>
+        <div class="control-hint" aria-label="Keyboard and mouse controls">
+          <span><kbd>Hold mouse</kbd> / <kbd>Space</kbd>: drive</span>
+          <span><kbd>Drag</kbd> / <kbd>A</kbd><kbd>D</kbd>: rotate</span>
+          <span><kbd>R</kbd>: rescue</span>
+        </div>
+      </div>
       <div class="meters">
         <span id="distance">0000 m</span>
         <span id="velocity">0.0 m/s</span>
